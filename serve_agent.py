@@ -4,6 +4,9 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.prebuilt import create_react_agent
+import os
+
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 # Create the agent
 memory = SqliteSaver.from_conn_string(":memory:")
